@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,19 +13,19 @@
 		<link rel="stylesheet" href="css/bootstrap.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/script.js"></script>
+		<script src="js/bootstrap.bundle.min.js" defer></script>
+		<script src="js/script.js" defer></script>
 
 		<link rel="icon" href="images/favicon.png" />
 
 		<title>Corso Training</title>
 	</head>
 
-	<body>
+	<body class="overflow-x-hidden">
 		<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="opacity: 0.95; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)">
-			<div class="container py-2">
+			<div class="container py-1">
 				<a href="#" class="navbar-brand">
-					<img src="images/logo.png" alt="Logo" style="width: 200px; height: 50px" />
+					<img src="images/logo.png" alt="Logo" class="logo" style="width: 200px; height: 50px" />
 				</a>
 				<button
 					type="button"
@@ -68,20 +68,16 @@
 			</div>
 		</nav>
 
-		<header class="vh-100">
+		<header class="min-vh-100 pb-5">
 			<section class="section-hero">
-				<div class="container text-white text-center pt-9">
+				<div class="container text-white text-center pt-7 pt-sm-8 pt-lg-9">
 					<h1 class="fs-1 fw-light mb-3">Explore Our Training and Seminar Videos</h1>
 					<p class="lead mb-4">
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ullam ad unde voluptate doloribus cumque error
 						dolores? Aspernatur excepturi expedita nihil odio nemo, iste ab vitae, quibusdam illo, labore est!
 					</p>
-					<div class="mb-5">
-						<a
-							href="#register"
-							class="btn btn-primary btn-lg rounded-pill me-2 text-uppercase fs-8"
-							style="padding: 0.75rem 2.4rem"
-						>
+					<div class="mb-5 d-flex flex-column flex-sm-row gap-3 align-items-center justify-content-center">
+						<a href="#register" class="btn btn-primary btn-lg rounded-pill text-uppercase fs-8" style="padding: 0.75rem 2.4rem">
 							Register
 						</a>
 						<a
@@ -130,7 +126,7 @@
 		</header>
 
 		<section id="register" class="section-register bg-primary mb-7">
-			<div class="container py-5">
+			<div class="container py-6">
 				<div class="row row-cols-1 row-cols-lg-2">
 					<div class="col">
 						<h3 class="fs-6 fw-bolder text-uppercase mb-3">Unlock Your Potential with Engaging Content</h3>
@@ -157,10 +153,11 @@
 						</ul>
 					</div>
 					<div class="col my-auto">
-						<form name="register" method="post" netlify>
+						<form name="register" class="needs-validation" method="post" netlify novalidate>
 							<div class="form-floating mb-3">
 								<input type="text" name="name" id="name" placeholder="Name" class="form-control form-control-lg" required />
 								<label for="name" style="font-size: 1.1rem">Name</label>
+								<div class="invalid-feedback">Please provide a Name</div>
 							</div>
 							<div class="form-floating mb-3">
 								<input
@@ -172,6 +169,7 @@
 									required
 								/>
 								<label for="email" style="font-size: 1.1rem">Email Address</label>
+								<div class="invalid-feedback">Please provide a valid Email Address</div>
 							</div>
 							<div class="form-floating mb-3">
 								<input
@@ -183,10 +181,12 @@
 									required
 								/>
 								<label for="tel" style="font-size: 1.1rem">Phone Number</label>
+								<div class="invalid-feedback">Please provide a phone number</div>
 							</div>
 							<div class="form-check mb-3">
 								<input type="checkbox" name="check-terms" id="check-terms" class="form-check-input" required />
 								<label for="check-terms" class="form-check-label">I agree to the Terms & Conditions</label>
+								<div class="invalid-feedback">You must agree before registering</div>
 							</div>
 							<button
 								type="submit"
@@ -451,11 +451,12 @@
 		<section id="subscribe" class="section-subscribe mb-5">
 			<div class="container text-center px-xl-9">
 				<h4 class="fs-6 fw-bolder mb-4 px-xl-5">Subscribe to our email list and get updates from the experts</h4>
-				<div class="input-group input-group-lg">
-					<input type="email" class="form-control rounded-start-pill" placeholder="Email Address" />
+				<form name="subscribe" class="needs-validation input-group input-group-lg" method="post" netlify novalidate>
+					<input type="email" class="form-control rounded-start-pill" placeholder="Email Address" required />
 					<button type="submit" class="input-group-text btn btn-primary rounded-end-pill">Register Now</button>
+					<div class="invalid-feedback">Please provide a valid Email Address</div>
 					<div id="emailHelp" class="form-text mx-auto py-3 w-100">We'll never share your email with anyone else.</div>
-				</div>
+				</form>
 			</div>
 		</section>
 

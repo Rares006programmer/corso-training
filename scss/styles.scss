@@ -30,3 +30,10 @@ header {
 		background-color: lighten(#212529, 3%);
 	}
 }
+
+@media (max-width: 767px) {
+	.logo {
+		width: 140px !important;
+		height: 35px !important;
+	}
+}
